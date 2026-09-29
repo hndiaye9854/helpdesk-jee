@@ -1,4 +1,4 @@
-package config;
+package com.helpdesk.config;
 
 
 import java.util.Map;
@@ -7,7 +7,7 @@ import org.flywaydb.core.Flyway;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import persistence.TransactionManager;
+import com.helpdesk.persistence.TransactionManager;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 

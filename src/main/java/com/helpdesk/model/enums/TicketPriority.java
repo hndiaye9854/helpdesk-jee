@@ -1,4 +1,4 @@
-package model.enums;
+package com.helpdesk.model.enums;
 
 public enum TicketPriority {
     LOW("Basse"),

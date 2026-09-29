@@ -1,4 +1,4 @@
-package config;
+package com.helpdesk.config;
 
 
 import java.sql.Driver;

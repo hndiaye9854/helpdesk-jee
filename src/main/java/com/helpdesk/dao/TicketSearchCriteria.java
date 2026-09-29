@@ -1,8 +1,8 @@
-package dao;
+package com.helpdesk.dao;
 
 
-import model.enums.TicketPriority;
-import model.enums.TicketStatus;
+import com.helpdesk.model.enums.TicketPriority;
+import com.helpdesk.model.enums.TicketStatus;
 
 /** Critères de recherche optionnels : un critère null est ignoré. */
 public class TicketSearchCriteria {

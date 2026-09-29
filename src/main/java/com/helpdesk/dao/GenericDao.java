@@ -1,4 +1,4 @@
-package dao;
+package com.helpdesk.dao;
 
 
 import java.util.List;

@@ -1,11 +1,11 @@
-package dao.impl;
+package com.helpdesk.dao.impl;
 
 
 import java.util.List;
 import java.util.Optional;
 
-import dao.GenericDao;
-import persistence.EntityManagerProvider;
+import com.helpdesk.dao.GenericDao;
+import com.helpdesk.persistence.EntityManagerProvider;
 
 import jakarta.persistence.EntityManager;
 

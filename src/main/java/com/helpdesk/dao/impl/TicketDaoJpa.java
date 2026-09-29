@@ -1,13 +1,13 @@
-package dao.impl;
+package com.helpdesk.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import dao.TicketDao;
-import dao.TicketSearchCriteria;
-import model.Ticket;
-import persistence.EntityManagerProvider;
+import com.helpdesk.dao.TicketDao;
+import com.helpdesk.dao.TicketSearchCriteria;
+import com.helpdesk.model.Ticket;
+import com.helpdesk.persistence.EntityManagerProvider;
 
 import jakarta.persistence.criteria.*;
 

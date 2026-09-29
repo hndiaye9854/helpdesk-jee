@@ -1,12 +1,12 @@
-package dao.impl;
+package com.helpdesk.dao.impl;
 
 import java.util.List;
 import java.util.Optional;
 
-import dao.UserDao;
-import model.User;
-import model.enums.Role;
-import persistence.EntityManagerProvider;
+import com.helpdesk.dao.UserDao;
+import com.helpdesk.model.User;
+import com.helpdesk.model.enums.Role;
+import com.helpdesk.persistence.EntityManagerProvider;
 
 public class UserDaoJpa extends AbstractJpaDao<User, Long> implements UserDao {
 

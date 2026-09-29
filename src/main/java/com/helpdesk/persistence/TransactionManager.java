@@ -1,4 +1,4 @@
-package persistence;
+package com.helpdesk.persistence;
 
 
 import java.util.function.Supplier;

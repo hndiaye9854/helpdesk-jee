@@ -1,10 +1,10 @@
-package dao;
+package com.helpdesk.dao;
 
 
 import java.util.List;
 import java.util.Optional;
 
-import model.Ticket;
+import com.helpdesk.model.Ticket;
 
 public interface TicketDao extends GenericDao<Ticket, Long> {
     Optional<Ticket> findByIdWithDetails(Long id);

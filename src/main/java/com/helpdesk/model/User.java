@@ -1,10 +1,10 @@
-package model;
+package com.helpdesk.model;
 
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import model.enums.Role;
+import com.helpdesk.model.enums.Role;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
