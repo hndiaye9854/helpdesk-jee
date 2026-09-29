@@ -1,0 +1,22 @@
+# Maven
+target/
+
+# Eclipse
+.metadata/
+.settings/
+.classpath
+.project
+bin/
+
+# IntelliJ / VS Code
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.log
