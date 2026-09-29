@@ -16,14 +16,20 @@ public abstract class AbstractDaoIT {
 
     protected static final TransactionManager tx;
 
-    static {
+    @SuppressWarnings("resource") // Volontaire : conteneur partagé, supprimé par Ryuk en fin de tests
+    private static PostgreSQLContainer startContainer() {
         PostgreSQLContainer postgres = new PostgreSQLContainer("postgres:16-alpine");
         postgres.start();
+        return postgres;
+    }
+
+    static {
+        PostgreSQLContainer postgres = startContainer();
         PersistenceBootstrap persistence = PersistenceBootstrap.start(new DatabaseConfig(
                 postgres.getJdbcUrl(), postgres.getUsername(), postgres.getPassword(), 5));
         tx = persistence.transactionManager();
-        // Le conteneur est supprimé automatiquement à la fin des tests (conteneur Ryuk)
     }
+    
 
     @BeforeEach
     void cleanDatabase() {
@@ -32,4 +38,6 @@ public abstract class AbstractDaoIT {
             tx.get().createNativeQuery("DELETE FROM users").executeUpdate();
         });
     }
+    
+    
 }
