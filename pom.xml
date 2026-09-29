@@ -19,7 +19,8 @@
         <flyway.version>10.20.0</flyway.version>
         <junit.version>5.11.2</junit.version>
         <mockito.version>5.14.2</mockito.version>
-        <h2.version>2.3.232</h2.version>
+        <hikaricp.version>7.1.0</hikaricp.version>
+        <testcontainers.version>2.0.5</testcontainers.version>
     </properties>
 
     <dependencies>
@@ -103,12 +104,18 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+		    <groupId>com.zaxxer</groupId>
+		    <artifactId>HikariCP</artifactId>
+		    <version>${hikaricp.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.testcontainers</groupId>
+		    <artifactId>testcontainers-postgresql</artifactId>
+		    <version>${testcontainers.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
     </dependencies>
 
     <build>
@@ -132,6 +139,19 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+            <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-failsafe-plugin</artifactId>
+			    <version>3.5.1</version>
+			    <executions>
+			        <execution>
+			            <goals>
+			                <goal>integration-test</goal>
+			                <goal>verify</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
         </plugins>
     </build>
 </project>
