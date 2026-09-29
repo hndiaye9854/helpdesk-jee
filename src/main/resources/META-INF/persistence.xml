@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.1"
+             xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd">
+
+    <persistence-unit name="helpdeskPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>com.helpdesk.model.User</class>
+        <class>com.helpdesk.model.Ticket</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!-- Flyway gère le schéma : Hibernate ne fait que vérifier -->
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <!-- URL, utilisateur et mot de passe : PAS ici.
+                 Ils sont injectés au démarrage depuis les variables d'environnement (partie B). -->
+        </properties>
+    </persistence-unit>
+</persistence>
