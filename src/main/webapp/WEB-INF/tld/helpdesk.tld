@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                            https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_0.xsd"
+        version="3.0">
+    <tlib-version>1.0</tlib-version>
+    <short-name>hd</short-name>
+    <uri>urn:helpdesk:functions</uri>
+
+    <function>
+        <name>dateTime</name>
+        <function-class>com.helpdesk.web.util.Formats</function-class>
+        <function-signature>java.lang.String dateTime(java.time.LocalDateTime)</function-signature>
+    </function>
+</taglib>
