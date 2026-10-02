@@ -23,6 +23,8 @@ public class AppStartupListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         PersistenceBootstrap persistence = PersistenceBootstrap.start(DatabaseConfig.fromEnvironment());
         sce.getServletContext().setAttribute(PERSISTENCE_ATTRIBUTE, persistence);
+        sce.getServletContext().setAttribute(AppContext.ATTRIBUTE,
+                new AppContext(persistence.transactionManager()));
         log.info("HelpDesk démarré");
     }
 
